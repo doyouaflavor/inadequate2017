@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-hant"  ng-app="page">
+<head>
+	<meta charset="UTF-8">
+	<title>Trelolo.com</title>
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/style.css">
+    <script src="https://code.angularjs.org/snapshot/angular.js"></script>
+    <script src="https://code.angularjs.org/snapshot/angular-sanitize.js"></script>
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js"></script>
+	<meta property="og:url" content="https://trelolo.com" />
+<!--    <meta property="og:type"               content="article" />-->
+    <meta property="og:title" content="貧窮人的台北" />
+    <meta property="og:description" content="貧窮人的台北" />
+    <meta property="og:image"  content="" />
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+//  ga('create', 'UA-106608292-1', 'auto');
+
+</script>
+</head>
+
+<body  ng-controller="MgCtrl as ctl">
+
+
+<header style="background-image: url(/img/banner-03.jpg);-webkit-background-size: cover;background-color: {{bgColor}};">
+<!--    <h1><a style="color: {{bgTextColor}};" href="/?b/{{boardID}}">{{myData.name}}</a></h1>-->
+</header>
+<div ng-bind-html="info">
+  
+</div>
+<nav>
+    <ul>
+       <li ng-repeat="item in actions">
+         <h4 ng-click="toggleAction($index)">{{item.title}}<img src="{{item.img}}" alt=""></h4><div ng-bind-html="item.content" ng-show="showAction[$index]"></div>
+       </li>
+    </ul>
+</nav>
+<main>
+ <div ng-bind-html="main"></div>
+  <h1 ng-show="!isHome">{{title}}</h1>
+   
+   <section ng-if="isTreloloDotCom && isHome || cardID == 'qjwlxr7W'" id="transfer-url-to-trelolo">
+     <label for="url-from-trello"><h3>貼上你的 Trello 看板網址<br>立刻轉成 Trelolo 網站 </h3></label>
+      <input id="url-from-trello" type="text" placeholder="https://trello.com/b/XAL44x7M" ng-model="urlFromTrello" ng-change="doTransUrlToTrelolo()">
+      
+      <div ng-show="urlFromTrello">
+          <button ng-click="doCopyText()">點這裡複製</button>&nbsp;&nbsp;<a href="{{urlToTrelolo}}" target="_blank">或是點此連結前往你的網站</a>
+          <input class="url-to-trelolo" ng-model="urlToTrelolo">
+      </div>
+       
+   </section>
+    
+</main>
+<footer>
+    Copyright © 2017 <a href="http://trelolo.com/">trelolo.com</a>
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
