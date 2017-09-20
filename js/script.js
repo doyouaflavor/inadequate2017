@@ -223,7 +223,6 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
   }
 
   $scope.toggleAction =function(i){
-    console.log($scope.showAction);
     if(!$scope.showAction){
       $scope.showAction = [0,0,0,0,0];
     }
@@ -233,15 +232,28 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       $scope.showAction = [0,0,0,0,0];
       $scope.showAction[i] = 1;  
     }
-    console.log($scope.showAction);
-    
   }
 
 
   init = function(){
+      console.log(1);
       doRouter($scope);
       doUpdateFromBoardJson();
   }
 
   init();
 }]);
+
+// https://codepen.io/MicoTheArtist/pen/gbDlj
+// https://stackoverflow.com/questions/30689040/angular-scroll-directive
+// https://stackoverflow.com/questions/26588300/scroll-event-in-angularjs
+app.directive("scroll", function ($window) {
+    return function(scope, element, attrs) {
+      scope.header_bg_top = -20/3;
+      
+        angular.element($window).bind("scroll", function() {
+            scope.header_bg_top = (this.pageYOffset-20)/3;}
+            scope.$apply();
+        });
+    };
+});
