@@ -56,25 +56,7 @@ body>footer{
 inspired by https://codepen.io/philhoyt/pen/ujHzd
 */
 
-nav
-{
-    line-height: 0;
-    position: relative;
-    display: block;
-}
-nav::before {
-    height: 100%;
-    z-index: -1;
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 100vw;
-    top: 0;
-    left: calc((100% - 100vw) /2);
-    background-color: #f6f6f6;
-}
-
-nav ul
+.action-section ul
 {
 	list-style: none;
 	position: relative;
@@ -82,63 +64,46 @@ nav ul
 	margin: 0;
 	padding: 0;
 }
-
-nav ul a,
-nav ul span
-{
-	display:block;
-	color:#333;
-	text-decoration:none;
-	font-weight:700;
-	font-size:15px;
-	line-height:2em;
-	padding:0 15px;
+.action-section ul li{
+  padding: 0;
+  margin: 0;
+}
+.action-title{
+  position: relative;
+  cursor: pointer;
+}
+.action-title img{
+  display: block;
+}
+.action-title::after{
+  display: block;
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all linear 0.1s;
+  background-color: rgba(255,255,255,0);
+  z-index: 1;
+}
+.action-title:hover::after{
+  background-color: rgba(255,255,255,0.15);
+  
+}
+.action-content{
+  margin: 0;
+  padding: 20px 10px;
 }
 
-nav ul li
-{
-	position:relative;
-	float:left;
-	margin:0;
-	padding:15px 0;
+.accordian{
+  transition: all ease-out 0.2s;
+  height: 220px;
+  overflow: hidden;
+  background: #aaa;
 }
-
-nav ul li.current-menu-item
-{
-	background:#ddd
-}
-
-nav ul li:hover
-{
-	background:#cccccc
-}
-
-nav ul ul
-{
-	display:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	background:#f6f6f6;
-	padding:0
-}
-
-nav ul ul li
-{
-	float:none;
-	width:250px
-}
-
-nav ul ul a
-{
-	line-height:120%;
-	padding:10px 15px
-}
-
-nav ul li:hover > ul
-{
-	display:block;
-    z-index: 1;
+.accordian.ng-hide{
+  height: 0;
 }
 
 #transfer-url-to-trelolo {
@@ -228,13 +193,13 @@ blockquote cite:before {
     body>* {
         width: 100%;
     }
-    main {
+    main-content {
         padding: 0 20px;
     }
-    main>p{
+    main-content>p{
         width: calc(100% - 40px);
     }
-    main img{
+    main-content img{
         max-width: calc(100% - 40px);
     }
 }

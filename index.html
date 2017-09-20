@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="css/style.css">
     <script src="https://code.angularjs.org/snapshot/angular.js"></script>
     <script src="https://code.angularjs.org/snapshot/angular-sanitize.js"></script>
+    <script src="https://code.angularjs.org/snapshot/angular-animate.js"></script>
+<!--    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.js"></script>-->
     <script src="https://cdn.rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js"></script>
 	<meta property="og:url" content="https://trelolo.com" />
 <!--    <meta property="og:type"               content="article" />-->
@@ -30,31 +32,24 @@
 <header style="background-image: url(img/banner-03.jpg);-webkit-background-size: cover;background-color: {{bgColor}};">
 <!--    <h1><a style="color: {{bgTextColor}};" href="/?b/{{boardID}}">{{myData.name}}</a></h1>-->
 </header>
-<div ng-bind-html="info">
+<main>
+<div class="main-content"  ng-bind-html="info">
   
 </div>
-<nav>
-    <ul>
+<div class="action-section">
+  <ul>
        <li ng-repeat="item in actions">
-         <h4 ng-click="toggleAction($index)">{{item.title}}<img src="{{item.img}}" alt=""></h4><div ng-bind-html="item.content" ng-show="showAction[$index]"></div>
+         <div ng-click="toggleAction($index)" class="action-title"><img src="{{item.img}}" alt=""></div>
+         <div class="accordian action-content" ng-bind-html="item.content" ng-show="showAction[$index]"></div>
        </li>
     </ul>
-</nav>
-<main>
- <div ng-bind-html="main"></div>
-  <h1 ng-show="!isHome">{{title}}</h1>
+</div>
+ <div class="main-content" ng-bind-html="main">
    
-   <section ng-if="isTreloloDotCom && isHome || cardID == 'qjwlxr7W'" id="transfer-url-to-trelolo">
-     <label for="url-from-trello"><h3>貼上你的 Trello 看板網址<br>立刻轉成 Trelolo 網站 </h3></label>
-      <input id="url-from-trello" type="text" placeholder="https://trello.com/b/XAL44x7M" ng-model="urlFromTrello" ng-change="doTransUrlToTrelolo()">
-      
-      <div ng-show="urlFromTrello">
-          <button ng-click="doCopyText()">點這裡複製</button>&nbsp;&nbsp;<a href="{{urlToTrelolo}}" target="_blank">或是點此連結前往你的網站</a>
-          <input class="url-to-trelolo" ng-model="urlToTrelolo">
-      </div>
-       
-   </section>
-    
+ </div>
+    <div class="cta">
+      <a href="{{cta.url}}" target="_blank"><img src="https://dummyimage.com/300x100/18bec4/ffffff?text={{cta.title}}" alt=""></a>
+    </div>
 </main>
 <footer>
     Copyright © 2017 <a href="http://trelolo.com/">trelolo.com</a>

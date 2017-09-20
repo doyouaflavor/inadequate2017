@@ -10,7 +10,7 @@ showdown.setOption('disableForced4SpacesIndentedSublists',true);
 
 var treloloBoardID = 'Qu1ESrH2';
 
-var app = angular.module("page", ['ngSanitize']).config(function($sceDelegateProvider) {  
+var app = angular.module("page", ['ngSanitize','ngAnimate']).config(function($sceDelegateProvider) {  
   $sceDelegateProvider.resourceUrlWhitelist([
     // Allow same origin resource loads.
     'self',
@@ -135,7 +135,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       }
       if(item.shortLink == 'cmjOXN2i'){
         $scope.actions[1] = {
-          img : 'https://dummyimage.com/720x120/000/fff?text=看見',
+          img : item.attachments[0].url,
           title : '看見',
           content : $sce.trustAsHtml(converter.makeHtml(item.desc)),
         }
@@ -143,7 +143,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       }
       if(item.shortLink == 'A7y1NQK1'){
         $scope.actions[2] = {
-          img : 'https://dummyimage.com/720x120/450b45/ffffff?text=體驗',
+          img : item.attachments[0].url,
           title : '體驗',
           content : $sce.trustAsHtml(converter.makeHtml(item.desc)),
         }
@@ -151,7 +151,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       }
       if(item.shortLink == 'Eph7OA64'){
         $scope.actions[3] = {
-          img : 'https://dummyimage.com/720x120/50634f/ffffff?text=聆聆',
+          img : item.attachments[0].url,
           title : '聆聆',
           content : $sce.trustAsHtml(converter.makeHtml(item.desc)),
         }
@@ -159,33 +159,19 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       }
       if(item.shortLink == 'ykmnOKtA'){
         $scope.actions[4] = {
-          img : 'https://dummyimage.com/720x120/273b57/ffffff?text=團結',
+          img : item.attachments[0].url,
           title : '團結',
           content : $sce.trustAsHtml(converter.makeHtml(item.desc)),
         }
         $scope.action1 = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
+      if(item.shortLink == 'FcmGQdRN'){
+        $scope.cta = {
+          utl: item.attachments[0].url,
+          title: item.attachments[0].name
+        }
+      }
     });
-//    
-//      $scope.isHome = false;
-//      if(!$scope.cardID){
-//          $scope.cardID = $scope.homeCardId;
-//          $scope.isHome = true;
-//      }
-//      else if($scope.cardID == $scope.homeCardId){
-//          $scope.isHome = true;
-//      }
-//      var cards = $scope.myData.cards.forEach(function(item){
-//          if(item.shortLink == $scope.cardID){
-//              $scope.title = item.name;
-//              var converter = new showdown.Converter();
-//              $scope.content = converter.makeHtml(item.desc);
-//              $scope.content = $sce.trustAsHtml($scope.content);
-//          }
-//      });
-//      document.title = $scope.title + ' | ' + $scope.myData.name;
-//      ga('set', 'page', location.search);
-//      ga('send', 'pageview');
   };
 
   getMenuParent = function($scope, menuID){
