@@ -252,7 +252,7 @@ app.directive("scroll", function ($window) {
       scope.header_bg_top = -20/3;
       
         angular.element($window).bind("scroll", function() {
-            scope.header_bg_top = (this.pageYOffset-20)/3;}
+            scope.header_bg_top = (this.pageYOffset-20)/3;
             scope.$apply();
         });
     };
