@@ -55,6 +55,9 @@ body>footer{
 /**
 inspired by https://codepen.io/philhoyt/pen/ujHzd
 */
+.section{
+  margin: 40px 0;
+}
 
 .action-section ul
 {
@@ -95,6 +98,22 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
   margin: 0;
   padding: 20px 10px;
 }
+.action-image-word{
+  left: 40px;
+  top: 40px;
+  position: absolute;
+  z-index: 1;
+}
+.action-image-picture-wrapper{
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+.action-image-picture-wrapper img{
+/*  position: absolute;*/
+  margin-top: -160px;
+}
 
 .accordian{
   transition: all ease-out 0.2s;
@@ -106,35 +125,34 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
   height: 0;
 }
 
-#transfer-url-to-trelolo {
-    position: relative;
-/*    background: #eee;*/
-    text-align: center;
-    padding: 40px 0;
+.media-content{
+  width: 50%;
+  position: relative;
+  height: 400px;
 }
-#transfer-url-to-trelolo::before{
-    background: #eee;
-    width: 100vw;
-    height: 100%;
-    content: " ";
-    display:block;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: calc((100% - 100vw)/2);
+.media-content h3{
+  color: white;
 }
 
-#transfer-url-to-trelolo input{
-    text-align: center;
-    display: block;
-    width: 50%;
-    margin: 0 auto 10px;
-    
-}
-.url-to-trelolo{
-    background: #eee;
+.media-info{
+  position: absolute;
+  bottom: 0;
+  padding: 10px 20px;
 }
 
+.media-source{
+  float: right;
+  color: white;
+}
+
+.media-section img{
+/*
+  position: absolute;
+  left:0;
+  top: 0;
+  z-index: -1;
+*/
+}
 
 /**
   main
