@@ -11,10 +11,13 @@ body{
     display: none;
 }
 body>header {
-    background-position-y:33%; 
+    background-position-x:50%; 
     padding: 20px 0 0 0;
     width: 100%;
-    height: calc(100vh/2);
+    height: 100vh;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -mz-background-size: cover;
 /*    position:relative;*/
 }
 header h1{
@@ -117,7 +120,6 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
 
 .accordian{
   transition: all ease-out 0.2s;
-  height: 220px;
   max-height: 5000px;
   overflow: hidden;
   background: #ddd;
