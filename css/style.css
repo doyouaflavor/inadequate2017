@@ -118,11 +118,12 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
 .accordian{
   transition: all ease-out 0.2s;
   height: 220px;
+  max-height: 5000px;
   overflow: hidden;
-  background: #aaa;
+  background: #ddd;
 }
 .accordian.ng-hide{
-  height: 0;
+  max-height: 0;
 }
 
 .media-content{
