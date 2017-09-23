@@ -147,9 +147,9 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
   background-color: rgba(0,0,0,0.3);
   
 }
-.action-content{
+.action-content-wrapper{
   margin: 0;
-  padding: 20px 10px;
+  padding: 40px 10px 60px;
   color: black;
 }
 .action-title-info-wrapper{
@@ -190,6 +190,10 @@ img.action-image-word{
 /*  bottom: -50%;*/
 /*  margin-top: -50%;*/
   height: auto;
+}
+.action-cta-wrapper{
+  text-align: center;
+  padding: 20px 0 0;
 }
 
 .accordian{
@@ -269,17 +273,18 @@ img.action-image-word{
   text-align: center;
   padding: 100px 0;
 }
-.cta-section a{
+.cta{
   color: white;
   background: #18bec4;
 /*  width: 300px;*/
-  font-size: 2em;
+  font-size: 1.7em;
   text-decoration: none;
-  padding: .4em .9em;
+  padding: .4em 2em;
   border-radius: 50px;
 }
-.cta-section a:hover{
+.cta:hover{
   text-decoration: underline;
+  color: white;
 }
 
 /**
@@ -366,10 +371,9 @@ header .arrow-symbol{
 }
 .action-content-wrapper{
   position: relative;
-  overflow: hidden;
 }
 .action-content-wrapper .arrow-symbol:after{
-  bottom: 10px;
+  bottom: 60px;
   color: black;
   border: 1px black solid;
 }
@@ -395,14 +399,14 @@ header .arrow-symbol{
   .media-section,
   .main-content,
   .cta-section,
-  .action-content {
+  .action-content-wrapper {
     width: 720px;
     margin: 0 auto;
   }
-  .action-content {
+  .action-content-wrapper {
     position: relative;
   }
-  .action-content::after{
+  .action-content-wrapper::after{
     background:#ddd;
     position: absolute;
     display: block;

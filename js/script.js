@@ -180,15 +180,31 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       }
       if(item.shortLink == 'cmjOXN2i'){
         $scope.actions[1].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
+        if(item.attachments[0]){
+          $scope.actions[1].url = item.attachments[0].url;
+          $scope.actions[1].url_title = item.attachments[0].name;
+        }
       }
       if(item.shortLink == 'Eph7OA64'){
         $scope.actions[2].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
+        if(item.attachments[0]){
+          $scope.actions[2].url = item.attachments[0].url;
+          $scope.actions[2].url_title = item.attachments[0].name;
+        }
       }
       if(item.shortLink == 'A7y1NQK1'){
         $scope.actions[3].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
+        if(item.attachments[0]){
+          $scope.actions[3].url = item.attachments[0].url;
+          $scope.actions[3].url_title = item.attachments[0].name;
+        }
       }
       if(item.shortLink == 'ykmnOKtA'){
         $scope.actions[4].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
+        if(item.attachments[0]){
+          $scope.actions[4].url = item.attachments[0].url;
+          $scope.actions[4].url_title = item.attachments[0].name;
+        }
       }
       if(item.shortLink == 'FcmGQdRN'){
         $scope.cta = {

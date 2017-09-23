@@ -53,8 +53,11 @@
        </div>
        <div ng-class="{'arrow-symbol':true , 'reverse': showAction[$index]}"></div>
      </div>
-     <div class="action-content-wrapper">
-       <div class="accordian action-content" ng-bind-html="item.content" ng-show="showAction[$index]"></div>
+     <div class="action-content-wrapper accordian" ng-show="showAction[$index]">
+       <div ng-bind-html="item.content" class="action-content"></div>
+       <div class="action-cta-wrapper" ng-if="item.url">
+         <a href="{{item.url}}" class="cta action-cta">{{item.url_title}}</a>
+       </div>
        <a scroll-on-click href="#action-section-{{$index}}"><div class="arrow-symbol reverse"></div></a>
      </div>
    </div>
@@ -74,7 +77,7 @@
  </div>
 </div>
   <div class="cta-section section">
-   <a href="{{cta.url}}">{{cta.title}}</a>
+   <a class="cta" href="{{cta.url}}">{{cta.title}}</a>
   </div>
 
  <div class="main-content section" ng-bind-html="main">
