@@ -199,16 +199,6 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
     });
   };
 
-  getMenuParent = function($scope, menuID){
-      var returnObj = null;
-      $scope.menu.forEach(function(parent){
-          if(parent.id.match(menuID)){
-              returnObj = parent;
-          }
-      });
-      return returnObj;
-  };
-
   doUpdateFromCardJson = function(){
       var jsonUrl = $scope.jsonUrl;
       $http.get(jsonUrl)
@@ -248,14 +238,35 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
   }
 
   $scope.toggleAction =function(i){
+    var ms = 500;
     if(!$scope.showAction){
       $scope.showAction = [0,0,0,0,0];
     }
+    var sum = $scope.showAction.reduce(function(a,b){
+      return a+b;
+    }, 0);
+    if(sum == 0){
+      $scope.showAction[i] = 1;
+      return ;
+    }
+    
     if($scope.showAction[i] == 1){
       $scope.showAction[i] = 0;
+      var top = $('#action-section-'+i).offset().top;
+      $('body,html').animate({scrollTop: top}, ms);
+      
+      setTimeout(function(){
+      },ms);
     }else{
       $scope.showAction = [0,0,0,0,0];
-      $scope.showAction[i] = 1;  
+      var top = $('#action-section-1').offset().top;
+      $('body,html').animate({scrollTop: top}, ms);
+      setTimeout(function(){
+        $scope.showAction[i] = 1;
+        var top = $('#action-section-'+i).offset().top;
+        $('body,html').animate({scrollTop: top}, ms);
+      },ms);
+      
     }
   }
 
@@ -282,4 +293,23 @@ app.directive("scroll", function ($window) {
             scope.$apply();
         });
     };
+});
+
+// from https://stackoverflow.com/questions/17284005/scrollto-function-in-angularjs
+app.directive('scrollOnClick', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, $elm, attrs) {
+      var idToScroll = attrs.href;
+      $elm.on('click', function() {
+        var $target;
+        if (idToScroll) {
+          $target = $(idToScroll);
+        } else {
+          $target = $elm;
+        }
+        $("body").animate({scrollTop: $target.offset().top}, "slow");
+      });
+    }
+  }
 });

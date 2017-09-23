@@ -5,6 +5,7 @@
 	<title>貧窮人的台北</title>
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/style.css">
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.angularjs.org/snapshot/angular.js"></script>
     <script src="https://code.angularjs.org/snapshot/angular-sanitize.js"></script>
     <script src="https://code.angularjs.org/snapshot/angular-animate.js"></script>
@@ -32,13 +33,14 @@
 
 <header style="background-image: url(img/banner-03.jpg);background-color: {{bgColor}};background-position-y: {{header_bg_top}}px;">
 <!--    <h1><a style="color: {{bgTextColor}};" href="/?b/{{boardID}}">{{myData.name}}</a></h1>-->
+  <a scroll-on-click href="#intro"><div class="arrow-symbol" scroll-to-item scroll-to="#intro"></div></a>
 </header>
 <main>
-<div class="intro-section"  ng-bind-html="intro">
+<div id="intro" class="intro-section"  ng-bind-html="intro">
   
 </div>
 <div class="action-section">
-   <div ng-repeat="item in actions" ng-if="$index > 0">
+   <div ng-repeat="item in actions" ng-if="$index > 0" id="action-section-{{$index}}">
      <div ng-click="toggleAction($index)" class="action-title">
        <div class="action-title-info-wrapper">
         <div class="action-title-info">
@@ -49,8 +51,12 @@
        <div class="action-image-picture-wrapper">
          <img src="{{item.img}}" alt="">
        </div>
+       <div ng-class="{'arrow-symbol':true , 'reverse': showAction[$index]}"></div>
      </div>
-     <div class="accordian action-content" ng-bind-html="item.content" ng-show="showAction[$index]"></div>
+     <div class="action-content-wrapper">
+       <div class="accordian action-content" ng-bind-html="item.content" ng-show="showAction[$index]"></div>
+       <a scroll-on-click href="#action-section-{{$index}}"><div class="arrow-symbol reverse"></div></a>
+     </div>
    </div>
 </div>
 <div class="media-section section">

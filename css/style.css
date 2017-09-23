@@ -14,10 +14,10 @@ body{
     display: none;
 }
 body>header {
-    background-position-x:50%; 
-    padding: 20px 0 0 0;
-    width: 100%;
-    height: 100vh;
+  background-position-x:50%; 
+  padding: 20px 0 0 0;
+  width: 100%;
+  height: 100vh;
   -webkit-background-size: cover;
   background-size: cover;
   -mz-background-size: cover;
@@ -112,6 +112,22 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
   position: relative;
   cursor: pointer;
 }
+.arrow-symbol:after{
+  text-align: center;
+  content: '\00AB';
+  position: absolute;
+  font-size: 2em;
+  line-height:.58em;
+  transform: rotate(-90deg);
+  right: 20px;
+  bottom: 10px;
+  color: white;
+  z-index:2;
+  border: 1px white solid;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
 .action-title img{
   display: block;
 }
@@ -123,12 +139,12 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
   top: 0;
   right: 0;
   bottom: 0;
-  transition: all linear 0.1s;
+  transition: all linear 0.3s;
   background-color: rgba(0,0,0,.5);
   z-index: 1;
 }
 .action-title:hover .action-image-picture-wrapper::after{
-  background-color: rgba(0,0,0,0.35);
+  background-color: rgba(0,0,0,0.3);
   
 }
 .action-content{
@@ -177,8 +193,8 @@ img.action-image-word{
 }
 
 .accordian{
-  transition: all ease-out 0.2s;
-  max-height: 5000px;
+  transition: all ease 0.5s;
+  max-height: 2000px;
   background: #ddd;
 }
 .accordian.ng-hide{
@@ -204,13 +220,12 @@ img.action-image-word{
   top: 0;
   right: 0;
   bottom: 0;
-  transition: all linear 0.1s;
   background-color: rgba(0,0,0,.5);
   z-index: 1;
-  transition: all ease 0.1s;
+  transition: all ease 0.3s;
 }
 .media-content-wrapper a:hover .media-content:after{
-  background-color: rgba(0,0,0,.15);
+  background-color: rgba(0,0,0,.3);
 }
 /*
 .media-content:before{
@@ -252,7 +267,7 @@ img.action-image-word{
 
 .cta-section{
   text-align: center;
-  margin: 100px 0;
+  padding: 100px 0;
 }
 .cta-section a{
   color: white;
@@ -313,8 +328,51 @@ blockquote cite {
 blockquote cite:before {
     content: "\2014 \2009";
 }
+/*
+header .arrow-symbol-wrapper{
+  width: 100%;
+  bottom: 20px;
+  left: 50%;
+  text-align: center;
+}
+*/
+header .arrow-symbol{
+/*  display: inline;*/
+  position: absolute;
+  left: calc(50% + 2em);
+  bottom: 20px;
+}
+.action-title .arrow-symbol{
+  right: 0;
+  bottom: 10px;
+  position: absolute;
+}
+.arrow-symbol:after{
+  content: '\00AB';
+  font-size: 2em;
+  line-height:.58em;
+  transform: rotate(-90deg);
+  color: white;
+  z-index:2;
+  border: 1px white solid;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all ease .3s
+}
 
-
+.arrow-symbol.reverse:after{
+  transform: rotate(90deg);
+}
+.action-content-wrapper{
+  position: relative;
+  overflow: hidden;
+}
+.action-content-wrapper .arrow-symbol:after{
+  bottom: 10px;
+  color: black;
+  border: 1px black solid;
+}
 
 /** 
   RWD Begin
