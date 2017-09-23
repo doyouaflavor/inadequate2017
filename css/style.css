@@ -36,10 +36,10 @@ h1{
 }
 h2 {
 /*  display: block;*/
-  margin-top: 20px;
+  margin-top: 100px;
   text-align: center;
-  font-size: 2em;
-  border-bottom: .1px #999 solid;
+  font-size: 3em;
+/*  border-bottom: .1px #999 solid;*/
 }
 h3 {
     font-size: 1.5em;
@@ -134,6 +134,7 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
 .action-content{
   margin: 0;
   padding: 20px 10px;
+  color: black;
 }
 .action-title-info-wrapper{
   top: 20px;
@@ -251,6 +252,19 @@ img.action-image-word{
 
 .cta-section{
   text-align: center;
+  margin: 100px 0;
+}
+.cta-section a{
+  color: white;
+  background: #18bec4;
+/*  width: 300px;*/
+  font-size: 2em;
+  text-decoration: none;
+  padding: .4em .9em;
+  border-radius: 50px;
+}
+.cta-section a:hover{
+  text-decoration: underline;
 }
 
 /**
@@ -324,9 +338,9 @@ blockquote cite:before {
   .main-content,
   .cta-section,
   .action-content {
-        width: 720px;
-        margin: 0 auto;
-    }
+    width: 720px;
+    margin: 0 auto;
+  }
   .action-content {
     position: relative;
   }
