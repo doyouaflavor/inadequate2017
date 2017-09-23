@@ -126,32 +126,46 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
   setStaticContent = function($scope){
     $scope.actions = [];
     $scope.actions[1] = {
-          word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c12e11e814ab9ad6d3d9f3/2e23d292402b5557c505125839c04650/%E7%9C%8B%E8%A6%8B.png",
-          img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/5d7d3798b6bc51d94d549c81ed217afa/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(2).jpg',
-          title : '看見',
+      word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/f6592e5c01b43f1a686949a4295af020/%E7%9C%8B%E8%A6%8B.png",
+      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/5d7d3798b6bc51d94d549c81ed217afa/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(2).jpg',
+      title : '看見',
+      subtitle : '是什麼風把你吹來了'
+      
     }
     $scope.actions[2] = {
-          word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c12e1bb1b2cc15416f648e/a922d9232f0d5e1f9043d7138ab6d405/%E9%AB%94%E9%A9%97%E6%96%87%E5%AD%97.png",
-          img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/dcf49a92ec0c6dd51c5a313370b01f31/%E6%9E%97%E7%92%9F%E7%91%8B_10_20150223_8435-Good-1-Print%E8%BF%91%E5%8F%B0%E5%8C%97101%E6%9F%90%E8%99%95%E5%B8%82%E5%A0%B4.jpg',
-          title : '體驗',
-        }
-              $scope.actions[3] = {
-          word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c12e2d38ddfae2d8046f5b/586813c36a71a8241b735398036e8a02/%E8%81%86%E8%81%BD.png",
-          img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/1af33ba14dedce749bd561d8093a2be0/%E8%8A%92%E8%8D%89%E5%BF%83_%E5%8B%9E%E5%8B%95_(9).jpg',
-          title : '聆聆',
-        }
-              $scope.actions[4] = {
-          word_image:"https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c12e30a9bc5f7acfa9da36/8eaacb7e5189e5774cfc5b1d869d3253/%E5%9C%98%E7%B5%90%E6%96%87%E5%AD%97.png",
-          img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/646bf59a3eba76bef7ad05c60e2196b5/%E5%90%B3%E6%89%BF%E7%B4%98_%E7%94%9F%E6%B4%BB_(10).jpg',
-          title : '團結',
-        }
+      word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/4d4be07396a6428c268be79db9e45266/%E9%AB%94%E9%A9%97.png",
+      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/dcf49a92ec0c6dd51c5a313370b01f31/%E6%9E%97%E7%92%9F%E7%91%8B_10_20150223_8435-Good-1-Print%E8%BF%91%E5%8F%B0%E5%8C%97101%E6%9F%90%E8%99%95%E5%B8%82%E5%A0%B4.jpg',
+      title : '體驗',
+      subtitle : '城市狹縫旅行團'
+    }
+    $scope.actions[3] = {
+      word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/f4ab20327f3d4efe0e875e78233c0516/%E8%81%86%E8%81%BD.png",
+      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/ada50d3610bb4227db1796cacfe83609/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(5).jpg',
+      title : '聆聽',
+      subtitle : '漂流部落・真人圖書館・專題講座'
+    }
+    $scope.actions[4] = {
+      word_image:"https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/3fe3fdb4e67f4873372df3f82a93d8cd/%E5%9C%98%E7%B5%90.png",
+      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/646bf59a3eba76bef7ad05c60e2196b5/%E5%90%B3%E6%89%BF%E7%B4%98_%E7%94%9F%E6%B4%BB_(10).jpg',
+      title : '團結',
+      subtitle : '遊行・宣言・立碑'
+    }
     $scope.news = [];
     $scope.news[0] = {
       img : "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c3a4885938ed7af0fb2506/33ef73b7be35c4ac16a0edc8b1544832/image.png",
       url : "https://www.twreporter.org/a/opinion-project-inadequate2017",
-      title : "巫彥德／不只是飢餓而已—體驗貧窮者的流浪",
+      author: "巫彥德",
+      title : "不只是飢餓而已—體驗貧窮者的流浪",
       source : "報導者",
       source_img : "",
+    }
+    $scope.news[1] = {
+      img: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/ada50d3610bb4227db1796cacfe83609/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(5).jpg",
+      url: "http://npost.tw/archives/37333",
+      author: "曾文勤",
+      title : "如果我是他──當貧窮體驗作為一種倡議的手段",
+      source: "NPOst",
+      source_img: "",
     }
   }
 
@@ -159,7 +173,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
     var converter = new showdown.Converter();
     $scope.myData.cards.forEach(function(item){
       if(item.shortLink == 'JYvozS7h'){
-        $scope.info = $sce.trustAsHtml(converter.makeHtml(item.desc));
+        $scope.intro = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
       if(item.shortLink == 'YYxOPQSS'){
         $scope.main = $sce.trustAsHtml(converter.makeHtml(item.desc));
@@ -167,10 +181,10 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       if(item.shortLink == 'cmjOXN2i'){
         $scope.actions[1].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
-      if(item.shortLink == 'A7y1NQK1'){
+      if(item.shortLink == 'Eph7OA64'){
         $scope.actions[2].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
-      if(item.shortLink == 'Eph7OA64'){
+      if(item.shortLink == 'A7y1NQK1'){
         $scope.actions[3].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
       if(item.shortLink == 'ykmnOKtA'){

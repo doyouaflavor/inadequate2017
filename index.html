@@ -34,35 +34,43 @@
 <!--    <h1><a style="color: {{bgTextColor}};" href="/?b/{{boardID}}">{{myData.name}}</a></h1>-->
 </header>
 <main>
-<div class="main-content section"  ng-bind-html="info">
+<div class="intro-section"  ng-bind-html="intro">
   
 </div>
-<div class="action-section section">
-  <ul>
-       <li ng-repeat="item in actions" ng-if="$index > 0">
-         <div ng-click="toggleAction($index)" class="action-title">
-           <img class="action-image-word" src="{{item.word_image}}" alt="">
-           <div class="action-image-picture-wrapper">
-             <img src="{{item.img}}" alt="">
-           </div>
-         </div>
-         <div class="accordian action-content" ng-bind-html="item.content" ng-show="showAction[$index]"></div>
-       </li>
-    </ul>
+<div class="action-section">
+   <div ng-repeat="item in actions" ng-if="$index > 0">
+     <div ng-click="toggleAction($index)" class="action-title">
+       <div class="action-title-info-wrapper">
+        <div class="action-title-info">
+          <img class="action-image-word" src="{{item.word_image}}" alt="">
+           <div class="action-subtitle">{{item.subtitle}}</div>
+        </div>
+       </div>
+       <div class="action-image-picture-wrapper">
+         <img src="{{item.img}}" alt="">
+       </div>
+     </div>
+     <div class="accordian action-content" ng-bind-html="item.content" ng-show="showAction[$index]"></div>
+   </div>
 </div>
 <div class="media-section section">
  <h2>媒體報導</h2>
-  <div class="media-content" ng-repeat="item in news" style="background-image: url({{item.img}});background-size: cover;">
+  <div class="media-content-wrapper" ng-repeat="item in news" >
+  <a target="_blank" href="{{item.url}}">
+  <div class="media-content" style="background-image: url('{{item.img}}');background-size: cover;">
+   
     <div class="media-info">
       <h3>{{item.title}}</h3>
-      <div class="media-source">{{item.source}}</div>
+      <div class="media-source">{{item.author}} @ {{item.source}}</div>
     </div>
    </div>
+   </a>
+ </div>
 </div>
  <div class="main-content section" ng-bind-html="main">
    
  </div>
-  <div class="cta section">
+  <div class="cta-section section">
     <a href="{{cta.url}}" target="_blank"><img src="https://dummyimage.com/300x100/18bec4/ffffff?text={{cta.title}}" alt=""></a>
   </div>
 </main>
