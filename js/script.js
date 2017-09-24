@@ -133,16 +133,16 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       
     }
     $scope.actions[2] = {
-      word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/4d4be07396a6428c268be79db9e45266/%E9%AB%94%E9%A9%97.png",
-      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/dcf49a92ec0c6dd51c5a313370b01f31/%E6%9E%97%E7%92%9F%E7%91%8B_10_20150223_8435-Good-1-Print%E8%BF%91%E5%8F%B0%E5%8C%97101%E6%9F%90%E8%99%95%E5%B8%82%E5%A0%B4.jpg',
-      title : '體驗',
-      subtitle : '城市狹縫旅行團'
-    }
-    $scope.actions[3] = {
       word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/f4ab20327f3d4efe0e875e78233c0516/%E8%81%86%E8%81%BD.png",
-      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/ada50d3610bb4227db1796cacfe83609/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(5).jpg',
+      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/dcf49a92ec0c6dd51c5a313370b01f31/%E6%9E%97%E7%92%9F%E7%91%8B_10_20150223_8435-Good-1-Print%E8%BF%91%E5%8F%B0%E5%8C%97101%E6%9F%90%E8%99%95%E5%B8%82%E5%A0%B4.jpg',
       title : '聆聽',
       subtitle : '漂流部落・真人圖書館・專題講座'
+    }
+    $scope.actions[3] = {
+      word_image: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/4d4be07396a6428c268be79db9e45266/%E9%AB%94%E9%A9%97.png",
+      img : 'https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/ada50d3610bb4227db1796cacfe83609/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(5).jpg',
+      title : '體驗',
+      subtitle : '城市狹縫旅行團'
     }
     $scope.actions[4] = {
       word_image:"https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c60d208ce8059dfba9154a/3fe3fdb4e67f4873372df3f82a93d8cd/%E5%9C%98%E7%B5%90.png",
@@ -170,14 +170,14 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
           $scope.actions[1].url_title = item.attachments[0].name;
         }
       }
-      if(item.shortLink == 'Eph7OA64'){
+      if(item.shortLink == 'A7y1NQK1'){
         $scope.actions[2].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
         if(item.attachments[0]){
           $scope.actions[2].url = item.attachments[0].url;
           $scope.actions[2].url_title = item.attachments[0].name;
         }
       }
-      if(item.shortLink == 'A7y1NQK1'){
+      if(item.shortLink == 'Eph7OA64'){
         $scope.actions[3].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
         if(item.attachments[0]){
           $scope.actions[3].url = item.attachments[0].url;

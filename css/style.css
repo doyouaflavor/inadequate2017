@@ -45,10 +45,14 @@ h3 {
     font-size: 1.5em;
 }
 h4 {
-    font-size: 1.2em;
+  font-weight:bolder;
+  margin-top: 40px;
+  font-size: 1.2em;
+/*  border-bottom: .1px black solid;*/
 }
 h5 {
-    font-size: 1em;
+  font-weight:bolder;
+  font-size: 1em;
 }
 header a {
     color: white;
@@ -310,7 +314,7 @@ inspired by https://codepen.io/palimadra/pen/lKgDd
 */
 blockquote {
     font-family: Georgia, serif;
-    font-size: 18px;
+    font-size: 15px;
     font-style: italic;
     margin: 0.25em 0;
     padding: 0.25em 40px;
@@ -354,7 +358,7 @@ header .arrow-symbol{
   bottom: 20px;
 }
 .action-title .arrow-symbol{
-  right: 0;
+  left: calc(50% + 2em);
   bottom: 10px;
   position: absolute;
 }
