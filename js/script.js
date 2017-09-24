@@ -194,7 +194,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       if(item.shortLink == 'FcmGQdRN'){
         item.attachments.forEach(function(a){
           $scope.cta.push({
-            utl: a.url,
+            url: a.url,
             title: a.name
           });
         })
@@ -251,6 +251,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
     }, 0);
     if(sum == 0){
       $scope.showAction[i] = 1;
+      ga('send','event','click','open','action-section-'+i);
       return ;
     }
     
@@ -258,12 +259,12 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       $scope.showAction[i] = 0;
       var top = $('#action-section-'+i).offset().top;
       $('body,html').animate({scrollTop: top}, ms);
-      
-      setTimeout(function(){
-      },ms);
+      ga('send','event','click','close','action-section-'+i);
     }else{
+      ga('send','event','click','open','action-section-'+i);
       $scope.showAction = [0,0,0,0,0];
-      var top = $('#action-section-1').offset().top;
+      var j = (i==1)?1:i-1;
+      var top = $('#action-section-'+j).offset().top;
       $('body,html').animate({scrollTop: top}, ms);
       setTimeout(function(){
         $scope.showAction[i] = 1;
@@ -273,7 +274,10 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       
     }
   }
-
+  
+  $scope.clickGA = function(label){
+    ga('send','event','click','link',label);
+  }
 
   init = function(){
       console.log(1);
@@ -305,6 +309,7 @@ app.directive('scrollOnClick', function() {
     link: function(scope, $elm, attrs) {
       var idToScroll = attrs.href;
       $elm.on('click', function() {
+        ga('send','event','click','scroll',attrs.href);
         var $target;
         if (idToScroll) {
           $target = $(idToScroll);
