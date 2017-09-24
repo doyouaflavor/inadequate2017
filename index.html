@@ -60,7 +60,7 @@
        <div class="action-cta-wrapper" ng-if="item.url">
          <a href="{{item.url}}" class="cta action-cta">{{item.url_title}}</a>
        </div>
-       <a scroll-on-click href="#action-section-{{$index}}"><div class="arrow-symbol reverse"></div></a>
+       <a href="javascript:void(0)" ng-click="toggleAction($index)"><div class="arrow-symbol reverse"></div></a>
      </div>
    </div>
 </div>

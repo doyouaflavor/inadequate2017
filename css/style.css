@@ -381,7 +381,7 @@ header .arrow-symbol{
   position: relative;
 }
 .action-content-wrapper .arrow-symbol:after{
-  bottom: 60px;
+  bottom: 20px;
   color: black;
   border: 1px black solid;
 }
