@@ -212,6 +212,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
             news.img = a.url;
           }else{
             news.url = a.url;
+            news.source = a.name;
           }
         })
         $scope.news.push(news);

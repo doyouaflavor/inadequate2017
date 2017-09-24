@@ -251,11 +251,15 @@ img.action-image-word{
   z-index: 2;
   width: 100%;
   position: absolute;
+  top: 0;
   bottom: 0;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
 
 .media-source{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   float: right;
   color: white;
 }
