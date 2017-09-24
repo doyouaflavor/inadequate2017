@@ -157,16 +157,14 @@ inspired by https://codepen.io/philhoyt/pen/ujHzd
   color: black;
 }
 .action-title-info-wrapper{
-  top: 20px;
-  left: 50%;
+  top: 30px;
+  left: 0;
+  right: 0;
   position: absolute;
   z-index: 2;
 }
 .action-title-info{
-  position: relative;
-  left: -50%;
   text-align: center;
-  width: 100%;
 }
 img.action-image-word{
 /*  text-align: center;*/
@@ -182,7 +180,7 @@ img.action-image-word{
   overflow: hidden;
   width: 100%;
 /*  height: 120px;*/
-  height: 25vh;
+  height: 160px;
 }
 .action-image-picture-wrapper{
   
@@ -359,13 +357,13 @@ header .arrow-symbol{
 }
 .action-title .arrow-symbol{
   left: calc(50% + 2em);
-  bottom: 10px;
+  bottom: 25px;
   position: absolute;
 }
 .arrow-symbol:after{
   content: '\00AB';
   font-size: 2em;
-  line-height:.58em;
+  line-height:.6em;
   transform: rotate(-90deg);
   color: white;
   z-index:2;
