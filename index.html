@@ -70,22 +70,22 @@
    
     <div class="media-info">
       <h3>{{item.title}}</h3>
-      <div class="media-source">{{item.author}} @ {{item.source}}</div>
+      <div class="media-source" ng-if="item.source">{{item.author}} @ {{item.source}}</div>
     </div>
    </div>
    </a>
  </div>
 </div>
   <div class="cta-section section">
-   <a class="cta" href="{{cta.url}}">{{cta.title}}</a>
+   <a ng-repeat="cta_item in cta" class="cta" href="{{cta_item.url}}">{{cta_item.title}}</a>
   </div>
 
- <div class="main-content section" ng-bind-html="main">
+ <div class="group-content section" ng-bind-html="group">
    
  </div>
 </main>
 <footer>
-    Copyright © 2017 向窮人學習聯盟
+    Copyright © 2017 向貧窮學習行動聯盟
 </footer>
 
 

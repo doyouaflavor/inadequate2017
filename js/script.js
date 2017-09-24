@@ -151,22 +151,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       subtitle : '遊行・宣言・立碑'
     }
     $scope.news = [];
-    $scope.news[0] = {
-      img : "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c3a4885938ed7af0fb2506/33ef73b7be35c4ac16a0edc8b1544832/image.png",
-      url : "https://www.twreporter.org/a/opinion-project-inadequate2017",
-      author: "巫彥德",
-      title : "不只是飢餓而已—體驗貧窮者的流浪",
-      source : "報導者",
-      source_img : "",
-    }
-    $scope.news[1] = {
-      img: "https://trello-attachments.s3.amazonaws.com/59bbde47c615354494cbff80/59c22f00597fbf473c4cbaeb/ada50d3610bb4227db1796cacfe83609/%E9%BB%83%E5%AD%90%E6%98%8E_%E7%84%A1%E5%AE%B6%E8%80%85_(5).jpg",
-      url: "http://npost.tw/archives/37333",
-      author: "曾文勤",
-      title : "如果我是他──當貧窮體驗作為一種倡議的手段",
-      source: "NPOst",
-      source_img: "",
-    }
+    $scope.cta = [];
   }
 
   setContent = function($scope){
@@ -176,7 +161,7 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
         $scope.intro = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
       if(item.shortLink == 'YYxOPQSS'){
-        $scope.main = $sce.trustAsHtml(converter.makeHtml(item.desc));
+        $scope.group = $sce.trustAsHtml(converter.makeHtml(item.desc));
       }
       if(item.shortLink == 'cmjOXN2i'){
         $scope.actions[1].content = $sce.trustAsHtml(converter.makeHtml(item.desc));
@@ -207,10 +192,29 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
         }
       }
       if(item.shortLink == 'FcmGQdRN'){
-        $scope.cta = {
-          utl: item.attachments[0].url,
-          title: item.attachments[0].name
+        item.attachments.forEach(function(a){
+          $scope.cta.push({
+            utl: a.url,
+            title: a.name
+          });
+        })
+      }
+      if(item.idList == '59c72c49258c6973bb6c6ad1'){
+        // 媒體報導
+        var news = {
+          author: "",
+          title : item.name,
+          source: "",
+          source_img: "",
         }
+        item.attachments.forEach(function(a){
+          if(a.bytes){
+            news.img = a.url;
+          }else{
+            news.url = a.url;
+          }
+        })
+        $scope.news.push(news);
       }
     });
   };
@@ -234,23 +238,6 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
 //          setMenu($scope);
           setContent($scope);
       });
-  }
-
-  $scope.changeContent = function changeContent($event){
-      var obj = $event.target;
-      var href = obj.getAttribute('href');
-      if(href == '#'){
-          return
-      }else{
-          history.pushState(null,'',href);
-          var reg = RegExp(/^\/([bc]+)\/([^\/]+)(?:\/([^\/]+))?/);
-          $event.preventDefault();
-          if(reg.exec(href)){
-              $scope.cardID = reg.exec(href)[2];
-              setContent($scope);
-              $event.preventDefault();
-          }
-      }
   }
 
   $scope.toggleAction =function(i){
@@ -291,7 +278,6 @@ app.controller('MgCtrl',['$scope','$http','$sce',function($scope, $http, $sce){
       console.log(1);
       setStaticContent($scope);
       doRouter($scope);
-      doUpdateFromBoardJson();
   }
 
   init();

@@ -274,6 +274,7 @@ img.action-image-word{
   padding: 100px 0;
 }
 .cta{
+  display: inline-block;
   color: white;
   background: #18bec4;
 /*  width: 300px;*/
@@ -281,6 +282,7 @@ img.action-image-word{
   text-decoration: none;
   padding: .4em 2em;
   border-radius: 50px;
+  margin: 20px; 20px;
 }
 .cta:hover{
   text-decoration: underline;
@@ -378,6 +380,20 @@ header .arrow-symbol{
   border: 1px black solid;
 }
 
+.group-content {
+  padding: 0 10px;
+}
+.group-content h3{
+  font-size: 1.2em;
+  display: inline;
+  border-bottom: .1px white solid;
+  margin-bottom: 0;
+}
+.group-content p{
+  font-size: .9em;
+  margin-bottom: 1em;
+}
+
 /** 
   RWD Begin
 */
@@ -386,10 +402,10 @@ header .arrow-symbol{
     body>* {
         width: 100%;
     }
-    main-content {
+    group-content {
         padding: 0 20px;
     }
-    main-content>p{
+    group-content>p{
         width: calc(100% - 40px);
     }
 }
@@ -397,7 +413,7 @@ header .arrow-symbol{
 
 @media only screen and (min-width: 768px) {
   .media-section,
-  .main-content,
+  .group-content,
   .cta-section,
   .action-content-wrapper {
     width: 720px;
