@@ -334,7 +334,7 @@ blockquote cite:before {
     content: "\2014 \2009";
 }
 header .arrow-symbol{
-  bottom: 20px;
+  bottom: 60px;
 }
 .action-title .arrow-symbol{
   bottom: 10px;
