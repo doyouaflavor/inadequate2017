@@ -348,9 +348,10 @@ header .arrow-symbol{
   width: 100%;
 }
 .arrow-symbol:after{
+  font-family: Arial;
   display: inline-block;
   content: '\00AB';
-  font-size: 2em;
+  font-size: 1.7em;
   line-height:.6em;
   transform: rotate(-90deg);
   color: white;
