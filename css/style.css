@@ -192,7 +192,7 @@ img.action-image-word{
 
 .accordian{
   transition: all ease 0.5s;
-  max-height: 2000px;
+  max-height: 3000px;
   background: #ddd;
 }
 .accordian.ng-hide{
