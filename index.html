@@ -32,17 +32,21 @@
 </script>
 </head>
 
-<body  ng-controller="MgCtrl as ctl">
-    <div class="body-top">
-     <a href="https://4am.at.tw/" target="_blank""#" style="color:floralwhite;" ><b><i>>>前往2018貧窮人的台北網站</i></b></a>
-    </div>
-   
+
+
+<body ng-controller="MgCtrl as ctl">
+       
 <header style="background-image: url(img/bg-01.jpg);background-position-y: {{header_bg_top}}px;">  
      
 <div class="header-word"><img src="img/word.png" alt=""></div>
   <a scroll-on-click href="#intro"><div class="arrow-symbol" scroll-to-item scroll-to="#intro"></div></a>
    
 </header>
+    
+<div class="navbar">
+  <a href="https://4am.at.tw/">這是舊網站，今年的看這裡!!</a> 
+</div>
+    
 <main>
 <div id="intro" class="intro-section"  ng-bind-html="intro">
   
