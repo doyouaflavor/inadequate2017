@@ -30,9 +30,14 @@ body{
     position: fixed;
     z-index: 100;
 }
-
-.navbar a:hover{
-    background-color:#7eb1b3;
+.navbar a:hover::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.2);
+    content: " ";
 }
 
 body>header {
